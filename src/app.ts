@@ -22,7 +22,7 @@ app.get("/songs/FM1", async (req: Request, res: Response) => {
   const { data, error } = await supabase.storage.from("songs").list("FM1", {
     limit: 100,
     offset: 0,
-    sortBy: { column: "name", order: "desc" },
+    sortBy: { column: "created_at", order: "desc" },
   });
   if (error) return res.status(400).json({ error: error.message });
   return res.status(200).json(data);
@@ -33,7 +33,7 @@ app.get("/songs/FM2", async (req: Request, res: Response) => {
   const { data, error } = await supabase.storage.from("songs").list("FM2", {
     limit: 100,
     offset: 0,
-    sortBy: { column: "name", order: "asc" },
+    sortBy: { column: "created_at", order: "desc" },
   });
   if (error) return res.status(400).json({ error: error.message });
   return res.status(200).json(data);
@@ -44,7 +44,7 @@ app.get("/songs/FM3", async (req: Request, res: Response) => {
   const { data, error } = await supabase.storage.from("songs").list("FM3", {
     limit: 100,
     offset: 0,
-    sortBy: { column: "name", order: "asc" },
+    sortBy: { column: "created_at", order: "desc" },
   });
   if (error) return res.status(400).json({ error: error.message });
   return res.status(200).json(data);

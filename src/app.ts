@@ -7,9 +7,8 @@ import { createClient } from "@supabase/supabase-js";
 
 // Create a single supabase client for interacting with your database
 const supabase = createClient(
-  "https://tisxquhwharbxlrwzycc.supabase.co",
-
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRpc3hxdWh3aGFyYnhscnd6eWNjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI3OTI1NTIsImV4cCI6MjAxODM2ODU1Mn0.kV6lDxrNPPFESZG0ztrISRuvBXJLY_KVjY110-byxR0"
+  process.env.SUPABASE_URL as string,
+  process.env.SUPABASE_KEY as string
 );
 
 //For env File
